@@ -1,0 +1,86 @@
+body {
+  margin: 0;
+  font-family: "Arial", sans-serif;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  background: linear-gradient(135deg, #3f51b5 0%, #5c6bc0 50%, #7986cb 100%);
+  color: #ffffff;
+}
+
+.landing-page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: relative;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+.landing-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  height: 150px; /* Increase the size of the logo */
+  margin-right: 60px;
+}
+
+.landing-main {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 20px;
+}
+
+.text-container {
+  flex: 1;
+  max-width: 600px;
+  text-align: center;
+  z-index: 1;
+}
+
+.text-container p {
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.text-container button {
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #ff4081;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #ffffff;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.text-container button:hover {
+  background-color: #f50057;
+}
+
+.image-container {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.detective-image {
+  width: auto;
+  height: calc(
+    100vh - 250px
+  ); /* Adjust to cover most of the page below the nav */
+  margin-bottom: 30px;
+  object-fit: cover;
+}
