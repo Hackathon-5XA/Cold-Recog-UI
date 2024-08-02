@@ -23,8 +23,9 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.logo {
-  height: 150px; /* Increase the size of the logo */
+.landing-header > img{
+  height: auto; /* Increase the size of the logo */
+  width: 10vw;
   margin-right: 60px;
 }
 
@@ -77,6 +78,7 @@ body {
 }
 
 .detective-image {
+  position: relative;
   width: auto;
   height: calc(
     100vh - 250px
