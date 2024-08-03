@@ -10,7 +10,10 @@
   justify-content: space-between;
   padding: 10px;
 }
-
+.result-header > img {
+ height: auto; 
+ width:5vw;
+}
 .result-main {
   display: flex;
   flex-direction: column;

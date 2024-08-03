@@ -64,8 +64,8 @@ body {
 }
 
 .preview-container img {
-  max-width: 100%;
-  max-height: 200px; /* Adjust height if needed */
+  max-width: 50%;
+  max-height: auto; /* Adjust height if needed */
 }
 
 .search-button {
