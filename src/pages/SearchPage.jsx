@@ -1,22 +1,20 @@
 import React, { useCallback, useState, useEffect } from "react";
 import { useDropzone } from "react-dropzone";
-import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import "../styles/SearchPage.css";
 import logo from "../assets/logo.png";
 import AnimationComponent from "./AnimationComponent";
-import LoadingMessage from "./LoadingMessage";
 
 const SearchPage = () => {
   const navigate = useNavigate();
   const [previewUrl, setPreviewUrl] = useState("");
   const [matchedImages, setMatchedImages] = useState([]);
-  const [isFileProcessing, setIsFileProcessing] = useState(false); // Track file processing
-  const [uploadCompleted, setUploadCompleted] = useState(false); // Track upload completion
+  const [isFileProcessing, setIsFileProcessing] = useState(false);
+  const [uploadCompleted, setUploadCompleted] = useState(false);
 
   const onDrop = useCallback(async (acceptedFiles) => {
     if (acceptedFiles.length > 0) {
-      setIsFileProcessing(true); // Show animation when processing starts
+      setIsFileProcessing(true);
       const file = acceptedFiles[0];
       const formData = new FormData();
       formData.append("file", file);
@@ -35,7 +33,7 @@ const SearchPage = () => {
             matchRate: imageData.match_rate,
           }));
           setMatchedImages(matchedImagesUrls);
-          setUploadCompleted(true); // Mark upload as completed
+          setUploadCompleted(true);
         } else {
           console.error("Failed to upload image");
         }
@@ -63,7 +61,6 @@ const SearchPage = () => {
   };
 
   useEffect(() => {
-    // Reset processing state once preview URL is set or cleared
     if (previewUrl) {
       setIsFileProcessing(false);
     }
@@ -77,9 +74,9 @@ const SearchPage = () => {
 
   return (
     <div className="search-page">
-      <header className="landing-header">
-        <div className="navLinks">
-          <img src={logo} alt="Logo" className="headerLogos" />
+      <header className="searching-header">
+        <img src={logo} alt="Logo" className="headerLogos" />
+        <nav className="navLinks">
           <Link to="/">
             <button>About</button>
           </Link>
@@ -89,7 +86,7 @@ const SearchPage = () => {
           <Link to="/">
             <button>Contact us</button>
           </Link>
-        </div>
+        </nav>
       </header>
       <main className="search-main">
         {isFileProcessing ? (
@@ -100,34 +97,32 @@ const SearchPage = () => {
           <div className="preview-container">
             <img src={previewUrl} alt="Uploaded file preview" />
             <button className="search-button" onClick={handleSearch}>
-              GET RESULTS 
+              GET RESULTS
             </button>
           </div>
         ) : (
-          <div
-            {...getRootProps({
-              className: "dropzone",
-            })}
-          >
+          <div {...getRootProps({ className: "dropzone" })}>
             <input {...getInputProps()} />
             {isDragActive ? (
               <p>Drop the files here ...</p>
             ) : (
-              <p>DRAG & DROP </p>
+              <p>DRAG & DROP</p>
             )}
           </div>
         )}
       </main>
-      <footer>
-        <a href="https://github.com/Hackathon-5XA/Cold-Recog-UI/issues">
-          <button>Issues</button>
-        </a>
-        <a href="https://github.com/Hackathon-5XA">
-          <button>Repo</button>
-        </a>
-        <a href="/">
-          <button>Privacy Policy</button>
-        </a>
+      <footer className="searching-footer">
+        <nav>
+          <a href="https://github.com/Hackathon-5XA/Cold-Recog-UI/issues">
+            <button>Issues</button>
+          </a>
+          <a href="https://github.com/Hackathon-5XA">
+            <button>Repo</button>
+          </a>
+          <a href="/">
+            <button>Privacy Policy</button>
+          </a>
+        </nav>
         <h1>CopyRight &copy; 5XA</h1>
       </footer>
     </div>

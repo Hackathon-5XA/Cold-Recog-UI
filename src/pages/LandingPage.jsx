@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../styles/LandingPage.css";
-import logo from "../assets/logo.png"; // Update the path accordingly
-import detectiveImage from "../assets/detective.png"; // Update the path accordingly
+import logo from "../assets/logo.png";
+import detectiveImage from "../assets/detective.png";
 
 const LandingPage = () => {
   return (
@@ -44,6 +44,7 @@ const LandingPage = () => {
         </div>
       </main>
       <footer>
+        <nav>
         <a href="https://github.com/Hackathon-5XA/Cold-Recog-UI/issues">
           <button>Issues</button>
         </a>
@@ -53,6 +54,7 @@ const LandingPage = () => {
         <a href="/">
           <button>Privacy Policy</button>
         </a>
+        </nav>
         <h1>CopyRight &copy; 5XA</h1>
       </footer>
     </div>

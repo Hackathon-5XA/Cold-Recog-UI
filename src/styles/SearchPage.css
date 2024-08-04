@@ -10,9 +10,7 @@ body {
   background-color: #eeeeee;
   position: relative;
   overflow-x: hidden;
-  /* Prevent horizontal scrolling */
   color: #ffffff;
-  /* Ensure text color is readable on the gradient */
 }
 
 .search-main {
@@ -27,8 +25,38 @@ body {
 .headerLogos {
   height: 100px;
   width: auto;
-  margin-right: 1150px;
 }
+
+.searching-header {
+  padding: 20px 50px;
+  background-color: #212121;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navLinks {
+  display: flex;
+  gap: 20px;
+}
+
+.navLinks button {
+  background-color: #212121;
+  border: 0;
+  color: #eeeeee;
+  font-size: 36px;
+  font-family: "Bakbak One", sans-serif;
+  cursor: pointer;
+}
+
+.navLinks a {
+  color: #FFFFFF;
+  font-size: 20px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  line-height: 50px;
+}
+
 .dropzone {
   display: flex;
   justify-content: center;
@@ -38,7 +66,7 @@ body {
   height: 200px;
   margin: 20px 0;
   padding: 20px;
-  border: 2px solid #32E0C4; /* Neon border color */
+  border: 2px solid #32E0C4;
   border-radius: 10px;
   background-color: #cdcaca;
   color: #130B0B;
@@ -50,7 +78,6 @@ body {
   overflow: hidden;
 }
 
-/* Glowing border animation */
 .dropzone::before {
   content: "";
   position: absolute;
@@ -58,12 +85,12 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  border: 2px solid #32E0C4; /* Neon border color */
+  border: 2px solid #32E0C4;
   border-radius: 10px;
   box-sizing: border-box;
   z-index: 1;
   animation: shine 1.5s infinite;
-  opacity: 0.8; /* Adjust opacity for a subtler effect */
+  opacity: 0.8;
 }
 
 @keyframes shine {
@@ -81,11 +108,9 @@ body {
   }
 }
 
-
 .preview-container {
   display: flex;
   flex-direction: column;
-  /* Align items vertically */
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -95,8 +120,7 @@ body {
 
 .preview-container img {
   max-width: 50%;
-  max-height: auto;
-  /* Adjust height if needed */
+  height: auto;
 }
 
 .search-button {
@@ -114,10 +138,45 @@ body {
   transition: background-color 0.3s ease;
 }
 
-.search-button :hover {
-  opacity: 0.5;
-}
-
 .search-button:hover {
   background-color: #888;
+}
+
+.searching-footer {
+  background-color: #212121;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  height: 60px;
+}
+
+.searching-footer nav {
+  display: flex;
+  align-items: center;
+}
+
+.searching-footer a {
+  color: #FFFFFF;
+  font-size: 14px;
+  margin-right: 15px;
+}
+
+.searching-footer button {
+  background-color: #212121;
+  color: #eeeeee;
+  border: 0;
+  font-family: "Bakbak One", sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.searching-footer h1 {
+  color: #06C1A8;
+  font-size: 16px;
+  font-weight: lighter;
+  opacity: 0.5;
+  font-family: "Bakbak One", sans-serif;
+  margin-left: auto;
 }
