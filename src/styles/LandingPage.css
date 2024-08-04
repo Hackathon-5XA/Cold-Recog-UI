@@ -79,6 +79,9 @@ body {
   margin-bottom: 20px;
 }
 
+.bwtxt {
+  color:#0D7377;
+}
 .text-container h2 {
   font-family: "Inter", sans-serif;
   font-size: 39px;

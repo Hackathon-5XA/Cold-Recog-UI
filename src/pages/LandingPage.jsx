@@ -25,13 +25,10 @@ const LandingPage = () => {
         <div className="text-container">
           <h1>COLD RECOG</h1>
           <h2>
-            Our innovative system{" "}
-            <span style={{ color: "#0D7377" }}>
-              provides rapid, accurate identification
-            </span>{" "}
-            of unclaimed bodies, ensuring respect and closure for families.
-            Access this breakthrough technology easily through our user-friendly
-            web app.
+            Our innovative system provides rapid, accurate identification of
+            unclaimed bodies, ensuring respect and closure for families. Access
+            this breakthrough technology easily through our user-friendly web
+            app.
           </h2>
 
           <Link to="/search">

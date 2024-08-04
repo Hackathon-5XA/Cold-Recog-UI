@@ -1,0 +1,125 @@
+.icon-person {
+    font-size: 70px; /* Increase the size of the person icon */
+    margin: 24px; /* Add more margin to separate icons */
+    color: #32E0C4; /* Updated color for person icon */
+}
+
+.container {
+    position: relative;
+    height: 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 140px;
+    height: 140px;
+    border-radius: 100%;
+    background-color: #fff;
+    border: 9px solid #DEE1E4;
+    overflow: hidden;
+    animation: cloud-loop 1.2s infinite alternate ease-in-out; /* Make animation smoother */
+}
+
+.container::before {
+    content: "";
+    position: absolute;
+    top: 210px;
+    left: 26px;
+    width: 100px;
+    height: 32px;
+    border-radius: 100%;
+    background-color: rgba(222, 225, 228, 0.4);
+    animation: shadow-loop 1.2s infinite alternate ease-in-out;
+}
+
+.wrap {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+span::before {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 6px;
+    background-color: #DEE1E4;
+    transform: rotate(45deg);
+}
+
+span::after {
+    content: "";
+    position: absolute;
+    left: 30px;
+    top: 20px;
+    width: 36px;
+    height: 12px;
+    background-color: #DEE1E4;
+    transform: rotate(45deg);
+    border-radius: 0 4px 4px 0;
+}
+
+.box-1, .box-2 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.box-1 {
+    animation: rowup-1 2s linear infinite; /* Seamless left-right movement */
+}
+
+.box-2 {
+    animation: rowup-2 2s linear infinite; /* Seamless left-right movement */
+}
+
+@keyframes rowup-1 {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(50%);
+    }
+}
+
+@keyframes rowup-2 {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(50%);
+    }
+}
+
+@keyframes cloud-loop {
+    0% {
+        transform: translateY(15px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes shadow-loop {
+    0% {
+        transform: translateY(-35px) scale(1.15, 0.25);
+    }
+    100% {
+        transform: translateY(-35px) scale(1, 0.25);
+    }
+}
+
+.center {
+    animation: cloud-loop 1.2s infinite alternate ease-in-out;
+}
+
+span {
+    position: relative;
+    left: 112px;
+    top: 60px;
+    animation: cloud-loop 1.2s infinite alternate ease-in-out;
+}
