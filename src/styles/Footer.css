@@ -1,0 +1,64 @@
+/* Footer Component Styles */
+.footer {
+  background-color: #212121;
+  display: flex;
+  align-items: center;
+  padding: 0.625rem 1.25rem; /* 10px 20px */
+  height: 3.75rem; /* 60px */
+  box-sizing: border-box;
+  flex-wrap: wrap;
+}
+
+.footer a {
+  color: #FFFFFF;
+  font-size: 0.875rem; /* 14px */
+  margin-left: 1.875rem; /* 30px */
+  text-decoration: none;
+}
+
+.footer button {
+  background-color: #212121;
+  color: #eeeeee;
+  border: 0;
+  font-family: "Bakbak One", sans-serif;
+  font-size: 1rem; /* 16px */
+  cursor: pointer;
+}
+
+.footer h1 {
+  color: #06C1A8;
+  font-size: 1rem; /* 16px */
+  font-weight: lighter;
+  opacity: 0.5;
+  font-family: "Bakbak One", sans-serif;
+  margin-left: auto;
+  margin-right: 1.25rem; /* 20px */
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 48rem) {
+  /* 768px */
+  .footer {
+    flex-direction: column;
+    height: auto;
+    padding: 1.25rem 0.625rem; /* 20px 10px */
+    text-align: center;
+  }
+
+  .footer h1 {
+    margin-top: 1.25rem; /* 20px */
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 30rem) {
+  /* 480px */
+  .footer a {
+    font-size: 0.75rem; /* 12px */
+  }
+
+  .footer h1 {
+    font-size: 0.875rem; /* 14px */
+    margin-right: 33%;
+  }
+}

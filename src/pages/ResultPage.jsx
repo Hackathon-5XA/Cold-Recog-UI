@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
-import logo from "../assets/logo.png"; // Correct import for logo
+import Header from "./Header"; // Import the Header component
+import Footer from "./Footer"; // Import the Footer component
 import "../styles/ResultPage.css";
 
 // Import FontAwesome icons
@@ -22,20 +23,8 @@ const ResultPage = () => {
 
   return (
     <div className="result-page">
-      <header className="result-header">
-        <img src={logo} alt="Logo" className="headerLogo" />
-        <div className="navLinks">
-          <a href="/">
-            <button>About</button>
-          </a>
-          <a href="/">
-            <button>Features</button>
-          </a>
-          <a href="/">
-            <button>Contact us</button>
-          </a>
-        </div>
-      </header>
+      <Header /> {/* Use the Header component */}
+      
       <main className="result-main">
         <div className="image-carousel-container">
           <div className="image-box">
@@ -73,20 +62,8 @@ const ResultPage = () => {
           </div>
         </div>
       </main>
-      <footer className="result-footer">
-        <nav>
-        <a href="https://github.com/Hackathon-5XA/Cold-Recog-UI/issues">
-          <button>Issues</button>
-        </a>
-        <a href="https://github.com/Hackathon-5XA">
-          <button>Repo</button>
-        </a>
-        <a href="/">
-          <button>Privacy Policy</button>
-        </a>
-        </nav>
-        <h1>CopyRight &copy; 5XA</h1>
-      </footer>
+      
+      <Footer /> {/* Use the Footer component */}
     </div>
   );
 };

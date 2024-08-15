@@ -1,8 +1,9 @@
 import React, { useCallback, useState, useEffect } from "react";
 import { useDropzone } from "react-dropzone";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "../styles/SearchPage.css";
-import logo from "../assets/logo.png";
+import Header from "./Header";
+import Footer from "./Footer";
 import AnimationComponent from "./AnimationComponent";
 
 const SearchPage = () => {
@@ -11,6 +12,19 @@ const SearchPage = () => {
   const [matchedImages, setMatchedImages] = useState([]);
   const [isFileProcessing, setIsFileProcessing] = useState(false);
   const [uploadCompleted, setUploadCompleted] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 767);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 767);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   const onDrop = useCallback(async (acceptedFiles) => {
     if (acceptedFiles.length > 0) {
@@ -57,7 +71,9 @@ const SearchPage = () => {
   });
 
   const handleSearch = () => {
-    navigate("/result", { state: { uploadedImage: previewUrl, matchedImages } });
+    navigate("/result", {
+      state: { uploadedImage: previewUrl, matchedImages },
+    });
   };
 
   useEffect(() => {
@@ -74,20 +90,7 @@ const SearchPage = () => {
 
   return (
     <div className="search-page">
-      <header className="searching-header">
-        <img src={logo} alt="Logo" className="headerLogos" />
-        <nav className="navLinks">
-          <Link to="/">
-            <button>About</button>
-          </Link>
-          <Link to="/">
-            <button>Features</button>
-          </Link>
-          <Link to="/">
-            <button>Contact us</button>
-          </Link>
-        </nav>
-      </header>
+      <Header />
       <main className="search-main">
         {isFileProcessing ? (
           <div className="loading">
@@ -104,27 +107,14 @@ const SearchPage = () => {
           <div {...getRootProps({ className: "dropzone" })}>
             <input {...getInputProps()} />
             {isDragActive ? (
-              <p>Drop the files here ...</p>
+              <p>{isMobile ? "Upload or Capture" : "Drop the files here ..."}</p>
             ) : (
-              <p>DRAG & DROP</p>
+              <p>{isMobile ? "Upload or Capture" : "DRAG & DROP"}</p>
             )}
           </div>
         )}
       </main>
-      <footer className="searching-footer">
-        <nav>
-          <a href="https://github.com/Hackathon-5XA/Cold-Recog-UI/issues">
-            <button>Issues</button>
-          </a>
-          <a href="https://github.com/Hackathon-5XA">
-            <button>Repo</button>
-          </a>
-          <a href="/">
-            <button>Privacy Policy</button>
-          </a>
-        </nav>
-        <h1>CopyRight &copy; 5XA</h1>
-      </footer>
+      <Footer />
     </div>
   );
 };

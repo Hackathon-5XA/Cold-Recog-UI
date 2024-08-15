@@ -13,22 +13,27 @@ body {
 }
 
 .landing-header {
-  padding: 20px 50px;
+  padding: 1.25rem 3.125rem;
+  /* 20px 50px */
   background-color: #212121;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+  /* For absolute positioning of the menu */
 }
 
 .headerLogo {
-  height: 100px;
+  height: 5rem;
+  /* 80px */
   width: auto;
   margin-right: auto;
 }
 
 .navLinks {
   display: flex;
-  gap: 20px;
+  gap: 1.25rem;
+  /* 20px */
   margin-left: auto;
 }
 
@@ -36,17 +41,20 @@ body {
   background-color: #212121;
   border: 0;
   color: #eeeeee;
-  font-size: 36px;
+  font-size: 1.5rem;
+  /* 24px */
   font-family: "Bakbak One", sans-serif;
   cursor: pointer;
 }
 
 .navLinks a {
   color: #FFFFFF;
-  font-size: 20px;
+  font-size: 1.125rem;
+  /* 18px */
   text-decoration: none;
   transition: color 0.3s ease;
-  line-height: 50px;
+  line-height: 3.125rem;
+  /* 50px */
 }
 
 .landing-main {
@@ -54,26 +62,36 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 40px;
-  text-align: center;
+  padding: 2.5rem;
+  /* 40px */
   background-color: #eeeeee;
+  text-align: left;
+  /* Align text to the left */
+  flex-direction: row;
+  /* Ensure content is positioned left to right */
 }
 
 .text-container {
-  max-width: 700px;
+  max-width: 50%;
+  /* Adjust width as needed */
+  margin-right: 1.25rem;
+  /* 20px */
 }
 
 .text-container h1 {
-  font-size: 80px;
+  font-size: 3.75rem;
+  /* 60px */
   font-weight: 100;
   font-family: 'glitch';
   color: #06C1A8;
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
+  /* 20px */
 }
 
 .text-container h2 {
   font-family: "Inter", sans-serif;
-  font-size: 39px;
+  font-size: 2rem;
+  /* 32px */
   font-weight: 900;
   line-height: 1.5;
   color: #474444;
@@ -81,16 +99,19 @@ body {
 }
 
 .text-container button {
-  padding: 15px 30px;
+  padding: 0.9375rem 1.875rem;
+  /* 15px 30px */
   font-family: "K2D", sans-serif;
-  font-size: 20px;
+  font-size: 1.125rem;
+  /* 18px */
   font-weight: 800;
   background-color: #332B2B;
   border: none;
-  border-radius: 30px;
+  border-radius: 1.875rem;
+  /* 30px */
   cursor: pointer;
   color: #3AE4C9;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease;
 }
 
@@ -99,31 +120,41 @@ body {
 }
 
 .image-container {
-  width: auto;
-  height: 100%;
+  width: 100%;
+  height: auto;
 }
 
 .detective-image {
-  max-height: 80vh;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  margin-left: 1.5625rem;
+  /* 25px */
 }
 
 footer {
   background-color: #212121;
   display: flex;
   align-items: center;
-  padding: 10px 20px;
-  height: 60px;
+  padding: 0.625rem 1.25rem;
+  /* 10px 20px */
+  height: 3.75rem;
+  /* 60px */
   box-sizing: border-box;
+  flex-wrap: wrap;
 }
 
-footer > a {
-  margin-left: 30px;
+footer>a {
+  margin-left: 1.875rem;
+  /* 30px */
 }
 
 footer a {
   color: #FFFFFF;
-  font-size: 14px;
-  margin-right: 15px;
+  font-size: 0.875rem;
+  /* 14px */
+  /* margin-right: 0.9375rem; */
+  /* 15px */
 }
 
 footer button {
@@ -131,19 +162,218 @@ footer button {
   color: #eeeeee;
   border: 0;
   font-family: "Bakbak One", sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
+  /* 16px */
   cursor: pointer;
 }
 
 footer h1 {
   color: #06C1A8;
-  font-size: 16px;
+  font-size: 1rem;
+  /* 16px */
   font-weight: lighter;
   opacity: 0.5;
   font-family: "Bakbak One", sans-serif;
   margin-left: auto;
-  margin-right: 20px;
+  margin-right: 1.25rem;
+  /* 20px */
 }
+
+
+/* Collapsible Navigation Links */
+.navLinks {
+  display: flex;
+  gap: 1.25rem;
+  /* 20px */
+}
+
+.navLinks.open {
+  display: flex;
+  /* Show links when menu is open */
+  flex-direction: column;
+  position: absolute;
+  top: 4.375rem;
+  /* 70px */
+  right: 1.25rem;
+  /* 20px */
+  background-color: #212121;
+  width: 12.5rem;
+  /* 200px */
+  padding: 0.625rem;
+  /* 10px */
+}
+
+.navLinks.open button {
+  font-size: 1.125rem;
+  /* 18px */
+  margin-bottom: 0.625rem;
+  /* 10px */
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 48rem) {
+
+  /* 768px */
+  .landing-header {
+    flex-direction: column;
+    padding: 1.25rem;
+    /* 20px */
+  }
+
+  .headerLogo {
+    height: 3.75rem;
+    /* 60px */
+    margin-bottom: 1.25rem;
+    /* 20px */
+  }
+
+  .navLinks {
+    flex-direction: column;
+    gap: 0.625rem;
+    /* 10px */
+    margin-left: 0;
+    display: none;
+    /* Hide on mobile by default */
+  }
+
+  .navLinks button {
+    font-size: 1.125rem;
+    /* 18px */
+  }
+
+  .landing-main {
+    flex-direction: column;
+    padding: 1.25rem;
+    /* 20px */
+    text-align: center;
+  }
+
+  .text-container h1 {
+    font-size: 3.125rem;
+    /* 50px */
+  }
+
+  .text-container h2 {
+    font-size: 1.75rem;
+    /* 28px */
+  }
+
+  .text-container button {
+    font-size: 1rem;
+    /* 16px */
+  }
+
+  footer {
+    flex-direction: column;
+    height: auto;
+    padding: 1.25rem 0.625rem;
+    /* 20px 10px */
+    text-align: center;
+  }
+
+  footer h1 {
+    margin-top: 1.25rem;
+    /* 20px */
+    margin-right: 0;
+  }
+
+  .text-container,
+  .image-container {
+    max-width: 100%;
+    margin-right: 0;
+  }
+
+  .text-container {
+    margin-bottom: 1.25rem;
+    /* 20px */
+  }
+}
+
+@media (max-width: 30rem) {
+
+  /* 480px */
+  .text-container h1 {
+    font-size: 2.5rem;
+    /* 40px */
+  }
+
+  .text-container h2 {
+    font-size: 1.5rem;
+    /* 24px */
+  }
+
+  .text-container button {
+    font-size: 0.875rem;
+    /* 14px */
+  }
+
+  .landing-header {
+    padding: 0.625rem;
+    /* 10px */
+  }
+
+  .navLinks button {
+    font-size: 1rem;
+    /* 16px */
+  }
+
+  footer a {
+    font-size: 0.75rem;
+    /* 12px */
+  }
+
+  footer h1 {
+    font-size: 0.875rem;
+    margin-right: 33%;
+    /* 14px */
+  }
+
+  .detective-image {
+    display: block;
+    /* Ensures the image is treated as a block element */
+    margin-left: -3%;
+    /* Automatically calculates the left margin */
+    margin-right: auto;
+    /* Automatically calculates the right margin */
+    max-width: 100%;
+    /* Ensures the image doesn't exceed the container width */
+    height: auto;
+    /* Maintains the aspect ratio */
+  }
+
+  .menu_content {
+  list-style-type: none; /* Remove default list styling */
+  padding: 0;            /* Remove default padding */
+  margin: 0;             /* Remove default margin */
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center;    /* Center items horizontally */
+  gap: 16px;              /* Add space between items */
+  margin-top:35%;
+}
+
+.menu_content li {
+  color: white;          /* Set text color to white */
+  font-size: 18px;       /* Set a comfortable font size */
+  cursor: pointer;       /* Change cursor on hover */
+  font-family: "Bakbak One", sans-serif;
+  font-weight: 500;
+  padding: 8px 16px;     /* Add padding for better touch targets */
+  transition: background-color 0.3s; /* Smooth background change on hover */
+}
+
+.menu_content li:hover {
+  background-color: #333; /* Darken background on hover */
+  border-radius: 4px;     /* Add rounded corners */
+}
+
+
+  .navLinks.open {
+    display: flex;
+    /* Show links when menu is open */
+  }
+}
+
 
 @font-face {
   font-family: glitch;

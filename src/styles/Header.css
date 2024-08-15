@@ -1,0 +1,120 @@
+/* Header Component Styles */
+.header {
+  padding: 1.25rem 3.125rem; /* 20px 50px */
+  background-color: #212121;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative; /* For absolute positioning of the menu */
+}
+
+.headerLogo {
+  height: 5rem; /* 80px */
+  width: auto;
+  margin-right: auto;
+}
+
+.navLinks {
+  display: flex;
+  gap: 1.25rem; /* 20px */
+  margin-left: auto;
+}
+
+.navLinks button {
+  background-color: #212121;
+  border: 0;
+  color: #eeeeee;
+  font-size: 1.5rem; /* 24px */
+  font-family: "Bakbak One", sans-serif;
+  cursor: pointer;
+}
+
+.navLinks a {
+  color: #FFFFFF;
+  font-size: 1.125rem; /* 18px */
+  text-decoration: none;
+  transition: color 0.3s ease;
+  line-height: 3.125rem; /* 50px */
+}
+
+.navLinks.open {
+  display: flex; /* Show links when menu is open */
+  flex-direction: column;
+  position: absolute;
+  top: 4.375rem; /* 70px */
+  right: 1.25rem; /* 20px */
+  background-color: #212121;
+  width: 12.5rem; /* 200px */
+  padding: 0.625rem; /* 10px */
+}
+
+.navLinks.open button {
+  font-size: 1.125rem; /* 18px */
+  margin-bottom: 0.625rem; /* 10px */
+}
+
+.menu_content {
+  list-style-type: none; /* Remove default list styling */
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center items horizontally */
+  gap: 16px; /* Add space between items */
+  margin-top: 35%;
+}
+
+.menu_content li {
+  color: white; /* Set text color to white */
+  font-size: 18px; /* Set a comfortable font size */
+  cursor: pointer; /* Change cursor on hover */
+  font-family: "Bakbak One", sans-serif;
+  font-weight: 500;
+  padding: 8px 16px; /* Add padding for better touch targets */
+  transition: background-color 0.3s; /* Smooth background change on hover */
+}
+
+.menu_content li:hover {
+  background-color: #333; /* Darken background on hover */
+  border-radius: 4px; /* Add rounded corners */
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 48rem) {
+  /* 768px */
+  .header {
+    flex-direction: column;
+    padding: 1.25rem; /* 20px */
+  }
+
+  .headerLogo {
+    height: 3.75rem; /* 60px */
+    margin-bottom: 1.25rem; /* 20px */
+  }
+
+  .navLinks {
+    flex-direction: column;
+    gap: 0.625rem; /* 10px */
+    margin-left: 0;
+    display: none; /* Hide on mobile by default */
+  }
+
+  .navLinks button {
+    font-size: 1.125rem; /* 18px */
+  }
+}
+
+@media (max-width: 30rem) {
+  /* 480px */
+  .header {
+    padding: 0.625rem; /* 10px */
+  }
+
+  .navLinks button {
+    font-size: 1rem; /* 16px */
+  }
+
+  .navLinks.open {
+    display: flex; /* Show links when menu is open */
+  }
+}

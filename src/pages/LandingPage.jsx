@@ -1,26 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Header from "../pages/Header";
 import "../styles/LandingPage.css";
-import logo from "../assets/logo.png";
 import detectiveImage from "../assets/detective.png";
-
+import Footer from "../pages/Footer";
 const LandingPage = () => {
   return (
     <div className="landing-page">
-      <header className="landing-header">
-        <img src={logo} alt="Logo" className="headerLogo" />
-        <div className="navLinks">
-          <Link to="/">
-            <button>About</button>
-          </Link>
-          <Link to="/">
-            <button>Features</button>
-          </Link>
-          <Link to="/">
-            <button>Contact us</button>
-          </Link>
-        </div>
-      </header>
+      <Header />
       <main className="landing-main">
         <div className="text-container">
           <h1>COLD RECOG</h1>
@@ -43,20 +30,7 @@ const LandingPage = () => {
           />
         </div>
       </main>
-      <footer>
-        <nav>
-        <a href="https://github.com/Hackathon-5XA/Cold-Recog-UI/issues">
-          <button>Issues</button>
-        </a>
-        <a href="https://github.com/Hackathon-5XA">
-          <button>Repo</button>
-        </a>
-        <a href="/">
-          <button>Privacy Policy</button>
-        </a>
-        </nav>
-        <h1>CopyRight &copy; 5XA</h1>
-      </footer>
+      <Footer />
     </div>
   );
 };
