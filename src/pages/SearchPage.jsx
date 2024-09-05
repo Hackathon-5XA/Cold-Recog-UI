@@ -32,9 +32,9 @@ const SearchPage = () => {
       const file = acceptedFiles[0];
       const formData = new FormData();
       formData.append("file", file);
-
+      const ipAdd="localhost";
       try {
-        const response = await fetch("http://localhost:5000/upload", {
+        const response = await fetch(`http://${ipAdd}:5000/upload`, {
           method: "POST",
           body: formData,
         });
@@ -43,7 +43,7 @@ const SearchPage = () => {
           const data = await response.json();
           const matchedImagesData = data.matched_images || [];
           const matchedImagesUrls = matchedImagesData.map((imageData) => ({
-            url: `http://localhost:5000/matched-images/${imageData.file_name}`,
+            url: `http://${ipAdd}:5000/matched-images/${imageData.file_name}`,
             matchRate: imageData.match_rate,
           }));
           setMatchedImages(matchedImagesUrls);
